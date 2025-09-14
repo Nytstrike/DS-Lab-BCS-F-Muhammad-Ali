@@ -106,26 +106,26 @@ public:
 
     void print_list()
     {
-        Node *parser = head;
+        Node *temp = head;
 
-        while (parser != nullptr)
+        while (temp != nullptr)
         {
-            cout << parser->val;
-            if (parser->next != nullptr)
+            cout << temp->val;
+            if (temp->next != nullptr)
                 cout << " -> ";
-            parser = parser->next;
+            temp = temp->next;
         }
         cout << endl;
     }
 
     ~List()
     {
-        Node *parser = head;
-        while (parser != nullptr)
+        Node *temp = head;
+        while (temp != nullptr)
         {
-            Node *nextNode = parser->next;
-            delete parser;
-            parser = nextNode;
+            Node *nextNode = temp->next;
+            delete temp;
+            temp = nextNode;
         }
     }
 };
