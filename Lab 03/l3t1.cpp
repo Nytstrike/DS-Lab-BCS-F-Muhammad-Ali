@@ -74,7 +74,7 @@ public:
         if (head == nullptr || head->next == nullptr)
             return true;
 
-        // Find the middle of the linked list using slow and fast pointers
+        // Finding the middle of the linked list using slow and fast pointers
         Node *slow = head;
         Node *fast = head;
         
@@ -83,13 +83,11 @@ public:
             slow = slow->next;
             fast = fast->next->next;
         }
-
-        // Reverse the second half of the list
         Node *secondHalf = reverseList(slow);
         Node *firstHalf = head;
         Node *tempSecondHalf = secondHalf;
 
-        // Compare first half with reversed second half
+
         bool isPalin = true;
         while (tempSecondHalf != nullptr)
         {
@@ -101,8 +99,6 @@ public:
             firstHalf = firstHalf->next;
             tempSecondHalf = tempSecondHalf->next;
         }
-
-        // Restore the original list by reversing the second half back
         reverseList(secondHalf);
 
         return isPalin;
