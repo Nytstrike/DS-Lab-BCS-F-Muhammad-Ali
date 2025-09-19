@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int sumNonTail(int n) {
+
+    if (n == 0) return 0;
+
+    return n + sumNonTail(n - 1);
+}
+
+int main() {
+    int n = 5;
+    cout << "Non-Tail Recursion: Sum from 1 to " << n << " = " << sumNonTail(n) << endl;
+    return 0;
+}
